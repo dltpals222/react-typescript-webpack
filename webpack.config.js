@@ -6,11 +6,11 @@ const webpack = require("webpack");
 const isProduction = process.env.NODE_ENV === "production";
 const config = {
   entry: path.resolve(__dirname, "develop", "router.tsx"),
-  output: path.resolve(__dirname, "dist"),
+  output: { path: path.resolve(__dirname, "dist") },
   mode: isProduction ? "production" : "developmenet",
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "dist", "index.html"),
+      template: path.resolve(__dirname, "src", "index.html"),
     }),
     new webpack.ProvidePlugin({
       React: "react",
@@ -18,7 +18,7 @@ const config = {
     new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
-    rule: [
+    rules: [
       {
         test: /\.(tsx?|js)$/,
         exclude: /node_modules/,
