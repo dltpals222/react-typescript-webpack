@@ -1,20 +1,21 @@
-const express = require("express");
-const path = require("path");
-const fs = require("fs");
+import express, { Response, Request } from "express";
+import path from "path";
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "dist")), {
-  setHeader: (res: Response, filePath: string) => {
-    if (filePath.endsWith(".js")) {
-      res.setHeader("content-type", "application/javascript");
-    }
-  },
-});
+app.use(
+  express.static(path.join(__dirname, "dist"), {
+    setHeaders: (res: Response, filePath: string) => {
+      if (filePath.endsWith(".js")) {
+        res.setHeader("content-type", "application/javascript");
+      }
+    },
+  })
+);
 
 app.get("/", (req: Request, res: Response) => {
   const indexPath = path.join(__dirname, "dist", "index.html");
-  fs.sendfile(indexPath);
+  res.sendFile(indexPath);
 });
 
 app.listen(3000, () => {
