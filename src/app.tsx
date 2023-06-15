@@ -1,7 +1,13 @@
 import * as React from "react";
 
 const App = () => {
-  return <>일단 되는지 확인부터 해보자</>;
+  return (
+  <ul>
+    <li>첫번째 리스트</li>
+    <li>두번째 리스트</li>
+    <li>세번째 리스트</li>
+  </ul>
+    );
 };
 
 export default App;
