@@ -1,5 +1,6 @@
 import express, { Response, Request } from "express";
 import path from "path";
+import getIndex from "./GETPOST/getIndex";
 
 const app = express();
 
@@ -13,10 +14,7 @@ app.use(
   })
 );
 
-app.get("/", (req: Request, res: Response) => {
-  const indexPath = path.join(__dirname, "dist", "index.html");
-  res.sendFile(indexPath);
-});
+app.use(getIndex)
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
