@@ -10,16 +10,14 @@ const mariaDBConfig : mariadb.PoolConfig = {
 const pool = mariadb.createPool(mariaDBConfig)
 
 
-export async function connectToMariaDB():Promise<mariadb.PoolConnection|void> {
+export async function connectToMariaDB():Promise<mariadb.PoolConnection> {
   try {
     const connection = await pool.getConnection();
     console.log("MariaDB 연결 성공");
     return connection;
   } catch (error) {
-    if(error) {
       console.error("MariaDB 연결 실패",error);
       throw error;
-    }
   }
 
 }

@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.2.4",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.8.1",
+    "d3": "^7.8.5",
     "html-webpack-plugin": "^5.5.1",
     "mariadb": "^3.1.2",
     "react-financial-charts": "^2.0.1",
@@ -33,7 +34,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx webpack --node-env production",
     "start": "npx ts-node ./App-server.ts",
-    "devStart" : "webpack-dev-server --mode development --open"
+    "devStart": "webpack-dev-server --mode development --open"
   },
   "keywords": [],
   "author": "",
