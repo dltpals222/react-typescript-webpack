@@ -57,6 +57,7 @@ const config = {
     hot: true,
     inline: true,
     publicPath: "/",
+    open : true,
   },
 };
 
