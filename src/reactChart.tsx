@@ -17,7 +17,7 @@ const financialChart = () => {
   return (
     <>
       <h1>파이낸셜 차트</h1>
-      <ChartCanvas data={chartDate} width={800} height={400} ratio={1} seriesName={''} xScale={scaleTime} >
+      <ChartCanvas data={chartDate} width={800} height={400} ratio={1} seriesName={''} xScale={undefined} >
         <Chart id={1} yExtents={(d)=>[d.high, d.low]}>
 
         </Chart>
