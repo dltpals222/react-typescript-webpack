@@ -52,12 +52,14 @@ const config = {
     ],
   },
   devServer: {
-    historyApiCallback: true,
-    port: 3000,
+    // historyApiCallback: true,
+    port: 8080,
     hot: true,
-    inline: true,
-    publicPath: "/",
-    open : true,
+    // inline: true,
+    // publicPath: "/",
+    static : {
+      directory : path.resolve(__dirname, 'dist')
+    }
   },
 };
 
